@@ -1,7 +1,18 @@
 import { defineConfig } from 'vitepress'
+import { resolve } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, '..')
+      }
+    }
+  },
   title: "安安和同同",
   description: "AOSC Mascots website",
   themeConfig: {

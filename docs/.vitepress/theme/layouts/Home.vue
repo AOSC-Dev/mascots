@@ -38,8 +38,9 @@ import VPNav from 'vitepress/dist/client/theme-default/components/VPNav.vue'
 .hero {
   flex: 1;
   background-image: url(/images/home.png);
-  background-size: cover;
+  background-size: 80%;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 
