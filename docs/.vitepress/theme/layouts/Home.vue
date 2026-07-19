@@ -48,6 +48,6 @@ import VPNav from 'vitepress/dist/client/theme-default/components/VPNav.vue'
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0);
 }
 </style>
