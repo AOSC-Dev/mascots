@@ -14,12 +14,18 @@ title: 接收稿件
 
 ## 项目文件
 
+请将以下文件以压缩包的形式发送给我们：
+
+ - 原始项目文件
+ - 成品文件
+
 考虑到我们的设备对不同格式的支持有限，因此我们支持提交以下原始项目文件：
 
  - Krita 项目文件 (`.kra`)
  - Adobe Photoshop PSD 项目文件 (`.psd`)
  - Inkscape SVG 文件 (`.svg`)
  - 带有多图层的 TIFF 文件 (`.tif` / `.tiff`)
+ - GIMP 项目文件 (`.xcf`)
  - OpenToonz 项目 (`.tnz`)
 
 我们支持提交以下成品文件：
@@ -31,11 +37,12 @@ title: 接收稿件
 同时也因为我们主要使用 Linux 发行版，甚至有时会使用完全不支持 Windows / macOS 的设备，恕我们无法**直接接收**以下项目文件：
 
  - CLIP STUDIO PAINT / 优动漫 PAINT 项目文件 (`.clip` / `.lip`)
- - Paint Tool SAI 项目文件 (`.sai`)
+ - PaintTool SAI 项目文件 (`.sai` / `.sai2`)
  - openCanvas 项目文件 (`.oci` / `.oc6`)
- - 画世界项目文件 (`.hsj`)
- - Procreate 项目文件 (`.procreate`)
  - MediBang Paint 项目文件 (`.mdp`)
  - Corel Painter RIFF 文件 (`.rif`)
+ - Procreate 项目文件 (`.procreate`)
+ - 画世界项目文件 (`.hsj`)
+ - 天生会画项目文件 (`.gopaint`)
 
-若使用以上软件创作，请保留原始项目文件，且将其转换或导出为 PSD 或 TIFF 文件后，一起发送给我们。若在转换或导出的过程中遇到问题，也可联系我们寻求帮助。
+若使用以上软件创作，请保留原始项目文件，且根据指引将其转换或导出为 PSD 或 TIFF 文件后，一起发送给我们。若在该过程中遇到问题，也可联系我们寻求帮助。

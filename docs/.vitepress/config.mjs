@@ -31,7 +31,17 @@ export default defineConfig({
         {
           text: '文档中心',
           items: [
-            { text: '接收稿件', link: '/information/submit-arts' }
+            { text: '接收稿件', link: '/information/submit-arts' },
+            { text: '导出作品', items: [
+              { text: 'CLIP STUDIO PAINT / 优动漫 PAINT', link: '/information/export/from-csp' },
+              { text: 'PaintTool SAI', link: '/information/export/from-sai' },
+              { text: 'openCanvas', link: '/information/export/from-oc' },
+              { text: 'MediBang Paint', link: '/information/export/from-mdp' },
+              { text: 'Corel Painter', link: '/information/export/from-corel' },
+              { text: 'Procreate', link: '/information/export/from-procreate' },
+              { text: '画世界', link: '/information/export/from-hsj' },
+              { text: '天生会画', link: '/information/export/from-gopaint' }
+            ]}
           ]
         }
       ],
