@@ -19,7 +19,7 @@ title: 接收稿件
  - 原始项目文件
  - 成品文件
 
-考虑到我们的设备对不同格式的支持有限，因此我们支持提交以下原始项目文件：
+考虑到我们的设备对不同格式的支持有限，因此我们支持直接提交以下原始项目文件：
 
  - Krita 项目文件 (`.kra`)
  - Adobe Photoshop PSD 项目文件 (`.psd`)
@@ -39,8 +39,8 @@ title: 接收稿件
  - CLIP STUDIO PAINT / 优动漫 PAINT 项目文件 (`.clip` / `.lip`)
  - PaintTool SAI 项目文件 (`.sai` / `.sai2`)
  - openCanvas 项目文件 (`.oci` / `.oc6`)
- - MediBang Paint 项目文件 (`.mdp`)
- - Corel Painter RIFF 文件 (`.rif`)
+ - FireAlpaca / MediBang Paint 项目文件 (`.mdp`)
+ - Corel Painter RIFF 文件 (`.rif` / `.riff`)
  - Procreate 项目文件 (`.procreate`)
  - 画世界项目文件 (`.hsj`)
  - 天生会画项目文件 (`.gopaint`)

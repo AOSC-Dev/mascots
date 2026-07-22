@@ -22,7 +22,7 @@ export default defineConfig({
       { text: '关于安安', link: '/about-anan' },
       { text: '关于同同', link: '/about-tongtong' },
       { text: '相册', link: '/gallery' },
-      { text: '故事', link: '/stories' },
+      // { text: '故事', link: '/stories' },
       { text: '文档中心', link: '/information/' }
     ],
 
@@ -36,7 +36,7 @@ export default defineConfig({
               { text: 'CLIP STUDIO PAINT / 优动漫 PAINT', link: '/information/export/from-csp' },
               { text: 'PaintTool SAI', link: '/information/export/from-sai' },
               { text: 'openCanvas', link: '/information/export/from-oc' },
-              { text: 'MediBang Paint', link: '/information/export/from-mdp' },
+              { text: 'FireAlpaca / MediBang Paint', link: '/information/export/from-mdp' },
               { text: 'Corel Painter', link: '/information/export/from-corel' },
               { text: 'Procreate', link: '/information/export/from-procreate' },
               { text: '画世界', link: '/information/export/from-hsj' },
