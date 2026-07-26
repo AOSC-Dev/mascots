@@ -1,0 +1,36 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v7
+        name: Checkout
+
+      - uses: actions/setup-node@v7
+        name: Setup Node.js
+        with:
+          node-version: lts/*
+
+      - uses: pnpm/action-setup@v6
+        name: Setup pnpm
+        with:
+          run_install: true
+
+      - name: Build document
+        run: pnpm docs:build
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.PUBLISH_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+          publish_branch: pages
