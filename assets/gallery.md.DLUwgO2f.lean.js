@@ -1,0 +1,1 @@
+import{V as e,et as t,s as n}from"./chunks/framework.DOQf-1Jo.js";var r=JSON.parse(`{"title":"相册","description":"","frontmatter":{"layout":"page","title":"相册","sidebar":false},"headers":[],"relativePath":"gallery.md","filePath":"gallery.md"}`),i={name:`gallery.md`};function a(n,r,i,a,o,s){return t(),e(`div`)}var o=n(i,[[`render`,a]]);export{r as __pageData,o as default};
