@@ -6,7 +6,7 @@ sidebar: false
 
 <script setup>
 import MascotInfo from '@/components/MascotInfo.vue'
-const cards = ["/images/tongtong/tongtong-no-bg.png", "/images/tongtong/tongtong.png"]
+const cards = ["/images/tongtong/tongtong.png", "/images/tongtong/tongtong-no-bg.png"]
 const intro = []
 </script>
 

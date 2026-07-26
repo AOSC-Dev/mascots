@@ -6,7 +6,7 @@ sidebar: false
 
 <script setup>
 import MascotInfo from '@/components/MascotInfo.vue'
-const cards = ["/images/anan/anan-no-bg.png", "/images/anan/anan.png"]
+const cards = ["/images/anan/anan.png", "/images/anan/anan-no-bg.png"]
 const intro = [
     '生日：12 月 1 日',
     '年龄：???',
@@ -44,4 +44,5 @@ const intro = [
 - 安安家柜子里都放满了各种古董电脑和古怪设备，她还给每台都起了各种无厘头的名字。
 - 因为家里总运转着超过十台设备，室内温度总会比室外高出一截。
 - 安安家里有台叫“龙虾”的宠物服务器。
+
 </MascotInfo>
