@@ -22,7 +22,7 @@ export const zh = defineConfig({
               text: "设定稿",
               items: [
                 {
-                  text: "安安和同同设定稿",
+                  text: "立绘",
                   link: "/information/design/mascots",
                 },
                 {
