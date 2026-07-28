@@ -20,12 +20,21 @@
         <slot name="nav-screen-content-after" />
       </template>
     </VPNav>
-    <div class="hero" />
+    <div class="hero" :style="heroStyle" />
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useData } from 'vitepress'
 import VPNav from 'vitepress/dist/client/theme-default/components/VPNav.vue'
+
+const { frontmatter } = useData()
+
+const heroStyle = computed(() => {
+  const src = frontmatter.value.hero?.image?.src
+  return src ? { backgroundImage: `url(${src})` } : {}
+})
 </script>
 
 <style>
@@ -37,7 +46,6 @@ import VPNav from 'vitepress/dist/client/theme-default/components/VPNav.vue'
 
 .hero {
   flex: 1;
-  background-image: url(/images/home.png);
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;

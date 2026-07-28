@@ -4,6 +4,6 @@ layout: home
 hero:
   name: ""
   image:
-    src: /images/home.png
+    src: /images/home.webp
     alt: AOSC Mascots
 ---
