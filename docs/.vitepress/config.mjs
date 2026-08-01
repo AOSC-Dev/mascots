@@ -36,4 +36,5 @@ export default defineConfig({
   locales: {
     root: { label: "简体中文", ...zh },
   },
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
 });
