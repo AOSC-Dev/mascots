@@ -11,7 +11,9 @@ title: 接收稿件
 
 如无另行说明，我方将会在保留画师署名的情况下，要求买断永久版权，因此需要提供原始项目文件和成品文件。
 
-在默认情况下，我方将会对包括原始项目在内的文件以 [CC BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans) 协议对外发布，若对公开原始项目文件有担忧，与我方交涉后也可仅公开成品文件，但请注意成品文件将依然按该协议对外发布。
+在默认情况下，我方将会对包括原始项目在内的文件以 [CC BY-SA 4.0 International (如下图所示)](https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans) 协议对外发布，若对公开原始项目文件有担忧，与我方交涉后也可仅公开成品文件，但请注意成品文件将依然按该协议对外发布。
+
+[![](/images/by-sa.webp)](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en)
 
 ## 项目文件
 
