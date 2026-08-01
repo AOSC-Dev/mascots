@@ -7,6 +7,8 @@ title: Fumo 设计稿
 
 社区吉祥物安安的 Fumo 布偶设定稿由“番茄炒蛋”社团画师 Yukata 受 LiarOnce 委托设计
 
+![](/images/AnAn-fumo-design.webp)
+
 [下载设计稿](https://github.com/AOSC-Dev/fumo-anan)
 
 ## 关于作者

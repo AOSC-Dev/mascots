@@ -17,6 +17,7 @@ export const zh = defineConfig({
       "/information/": [
         {
           text: "文档中心",
+          link: "/information/",
           items: [
             {
               text: "设定稿",

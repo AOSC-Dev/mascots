@@ -6,7 +6,7 @@ sidebar: false
 
 <script setup>
 import MascotInfo from '@/components/MascotInfo.vue'
-const cards = ["/images/anan/anan.png", "/images/anan/anan-no-bg.png"]
+const cards = ["/images/anan/anan.webp", "/images/anan/anan-no-bg.webp"]
 const intro = [
     '生日：12 月 1 日',
     '年龄：???',
