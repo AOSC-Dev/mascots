@@ -47,7 +47,10 @@ const inject = (dir) => {
 inject(resources);
 
 const binDir = join(desktop, "bin");
-if (!existsSync(binDir) || !readdirSync(binDir).some((f) => f.startsWith("neutralino-"))) {
+const hasBinaries = existsSync(binDir) && readdirSync(binDir).some((f) => f.startsWith("neutralino-"));
+if (!hasBinaries) {
   console.log("Missing Neutralino binaries, running neu update...");
   execSync("neu update", { cwd: desktop, stdio: "inherit" });
+} else {
+  console.log("Neutralino binaries already present, skipping download.");
 }

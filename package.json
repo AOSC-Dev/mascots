@@ -12,7 +12,7 @@
     "desktop:build": "pnpm docs:build && node scripts/desktop-build.mjs",
     "desktop:update": "cd desktop && neu update",
     "desktop:run": "pnpm desktop:build && cd desktop && neu run",
-    "desktop:package": "pnpm desktop:build && pnpm desktop:update && cd desktop && neu build --embed-resources"
+    "desktop:package": "pnpm desktop:build && cd desktop && neu build --embed-resources"
   },
   "keywords": [],
   "author": "AOSC OS Maintainers <maintainers@aosc.io>",
