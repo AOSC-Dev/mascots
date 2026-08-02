@@ -12,6 +12,11 @@ dist
 cache
 temp
 examples-temp
+bin
+resources
+extensions
+*.neu
+.tmp
 node_modules
 pnpm-global
 TODOs.md

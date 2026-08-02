@@ -2,6 +2,7 @@ import { h } from 'vue'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Home from './layouts/Home.vue'
+import { openExternalLinksInBrowser } from './external-links.js'
 import './style.css'
 
 export default {
@@ -18,5 +19,6 @@ export default {
     }
   },
   enhanceApp({ app, router, siteData }) {
+    openExternalLinksInBrowser()
   }
 }
