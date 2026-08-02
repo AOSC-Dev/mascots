@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags: ["nightly"]
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      - uses: pnpm/action-setup@v6
+        with:
+          run_install: true
+
+      - name: Build site
+        run: pnpm docs:build
+
+      - name: Package site
+        run: |
+          cd docs/.vitepress/dist
+          zip -r ../../../site.zip .
+
+      - name: Download Neutralino binaries
+        working-directory: desktop
+        run: ../node_modules/.bin/neu update
+
+      - name: Prepare desktop resources
+        run: node scripts/desktop-build.mjs
+
+      - name: Package desktop app
+        working-directory: desktop
+        run: ../node_modules/.bin/neu build --embed-resources
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: nightly
+          prerelease: true
+          files: |
+            site.zip
+            desktop/dist/aosc-mascots/aosc-mascots-*
+          generate_release_notes: true

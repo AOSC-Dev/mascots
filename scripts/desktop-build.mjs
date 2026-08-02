@@ -6,6 +6,17 @@ const desktop = resolve("desktop");
 const dist = resolve("docs/.vitepress/dist");
 const resources = join(desktop, "resources");
 
+let hash = "";
+try {
+  hash = execSync("git rev-parse --short HEAD", { encoding: "utf8" }).trim();
+} catch {}
+
+const configPath = join(desktop, "neutralino.config.json");
+const config = JSON.parse(readFileSync(configPath, "utf8"));
+config.version = config.version.replace(/\+g[0-9a-f]+$/, "") + (hash ? `+g${hash}` : "");
+config.modes.window.title = config.modes.window.title.replace(/\s*\([0-9a-f]{7,}\)\s*$/, "") + (hash ? ` (${hash})` : "");
+writeFileSync(configPath, JSON.stringify(config, null, 2) + "\n");
+
 mkdirSync(resources, { recursive: true });
 for (const entry of readdirSync(resources)) {
   if (entry !== "js") rmSync(join(resources, entry), { recursive: true, force: true });

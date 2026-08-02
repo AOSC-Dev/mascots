@@ -1,6 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/neutralinojs/neutralinojs/main/schemas/neutralino.config.schema.json",
   "applicationId": "io.aosc.mascots",
+  "applicationName": "AOSC Mascots",
+  "author": "Anthon Open Source Community",
+  "description": "AOSC Mascots Documentation",
+  "copyright": "© Anthon Open Source Community | aosc.io. All rights reserved.",
   "version": "1.0.0",
   "defaultMode": "window",
   "port": 0,
