@@ -1,15 +1,14 @@
+import { execSync } from "node:child_process";
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
+const desktop = resolve("desktop");
 const dist = resolve("docs/.vitepress/dist");
-const resources = resolve("desktop/resources");
+const resources = join(desktop, "resources");
 
 mkdirSync(resources, { recursive: true });
-
 for (const entry of readdirSync(resources)) {
-  if (entry !== "js") {
-    rmSync(join(resources, entry), { recursive: true, force: true });
-  }
+  if (entry !== "js") rmSync(join(resources, entry), { recursive: true, force: true });
 }
 
 cpSync(dist, resources, { recursive: true });
@@ -22,21 +21,22 @@ if (!existsSync(clientLib)) {
   cpSync(resolve("desktop/vendor/neutralino.js"), clientLib);
 }
 
-const clientTag = '<script src="/js/neutralino.js"></script>\n<script>window.Neutralino?.init()</script>';
-
-function walk(dir) {
+const tag = '<script src="/js/neutralino.js"></script>\n<script>window.Neutralino?.init()</script>';
+const inject = (dir) => {
   for (const entry of readdirSync(dir)) {
     const full = join(dir, entry);
     if (statSync(full).isDirectory()) {
-      walk(full);
+      inject(full);
     } else if (full.endsWith(".html")) {
       let html = readFileSync(full, "utf8");
-      if (!html.includes(clientTag)) {
-        html = html.replace("</head>", `${clientTag}\n</head>`);
-        writeFileSync(full, html);
-      }
+      if (!html.includes(tag)) writeFileSync(full, html.replace("</head>", `${tag}\n</head>`));
     }
   }
-}
+};
+inject(resources);
 
-walk(resources);
+const binDir = join(desktop, "bin");
+if (!existsSync(binDir) || !readdirSync(binDir).some((f) => f.startsWith("neutralino-"))) {
+  console.log("Missing Neutralino binaries, running neu update...");
+  execSync("neu update", { cwd: desktop, stdio: "inherit" });
+}
