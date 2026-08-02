@@ -29,10 +29,12 @@
           <button class="lightbox-nav prev" @click="prev" aria-label="Previous">
             &#8249;
           </button>
-          <div class="lightbox-content">
-            <img :src="'/images/gallery/' + images[activeIndex].src + '.' + images[activeIndex].ext" />
-            <p class="lightbox-caption">{{ images[activeIndex].caption }}</p>
-          </div>
+          <Transition :name="slideName" mode="out-in">
+            <div :key="activeIndex" class="lightbox-content">
+              <img :src="'/images/gallery/' + images[activeIndex].src + '.' + images[activeIndex].ext" />
+              <p class="lightbox-caption">{{ images[activeIndex].caption }}</p>
+            </div>
+          </Transition>
           <button class="lightbox-nav next" @click="next" aria-label="Next">
             &#8250;
           </button>
@@ -43,7 +45,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, computed, watch } from "vue";
 
 const props = defineProps({
   images: {
@@ -54,6 +56,11 @@ const props = defineProps({
 });
 
 const activeIndex = ref(null);
+const direction = ref("next");
+
+const slideName = computed(() =>
+  direction.value === "next" ? "slide-next" : "slide-prev"
+);
 
 function open(i) {
   activeIndex.value = i;
@@ -64,18 +71,35 @@ function close() {
 }
 
 function prev() {
+  direction.value = "prev";
   activeIndex.value =
     activeIndex.value === 0 ? props.images.length - 1 : activeIndex.value - 1;
 }
 
 function next() {
+  direction.value = "next";
   activeIndex.value =
     activeIndex.value === props.images.length - 1 ? 0 : activeIndex.value + 1;
+}
+
+function preloadImages() {
+  if (activeIndex.value === null) return;
+  const n = props.images.length;
+  const indices = [
+    activeIndex.value,
+    (activeIndex.value + 1) % n,
+    (activeIndex.value + n - 1) % n
+  ];
+  indices.forEach((i) => {
+    const img = props.images[i];
+    new Image().src = "/images/gallery/" + img.src + "." + img.ext;
+  });
 }
 
 watch(activeIndex, (val) => {
   if (val !== null) {
     document.addEventListener("keydown", handleKeydown);
+    preloadImages();
   } else {
     document.removeEventListener("keydown", handleKeydown);
   }
@@ -245,6 +269,27 @@ function handleKeydown(e) {
 
 .lightbox-enter-from,
 .lightbox-leave-to {
+  opacity: 0;
+}
+
+.slide-next-enter-active,
+.slide-next-leave-active,
+.slide-prev-enter-active,
+.slide-prev-leave-active {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.slide-next-enter-from,
+.slide-prev-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-next-leave-to,
+.slide-prev-enter-from {
+  transform: translateX(-100%);
   opacity: 0;
 }
 
