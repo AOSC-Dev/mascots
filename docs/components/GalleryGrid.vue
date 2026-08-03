@@ -127,19 +127,18 @@ function handleKeydown(e) {
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
 }
 
 .gallery-item:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  z-index: 1;
 }
 
 .gallery-item img {
   display: block;
   width: 100%;
+  transform-origin: center center;
+  will-change: transform;
   transition: transform 0.3s ease;
 }
 
@@ -166,10 +165,9 @@ function handleKeydown(e) {
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.7);
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  backdrop-filter: blur(2px);
 }
 
 .lightbox-overlay {
@@ -179,8 +177,7 @@ function handleKeydown(e) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .lightbox-content {
