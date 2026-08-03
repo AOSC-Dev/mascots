@@ -2,22 +2,38 @@
     <div class="mascot-page">
         <div class="mascot-avatar">
             <Transition name="slide">
-                <img :src="cards[currentIndex]" :key="cards[currentIndex]">
+                <img :src="cards[currentIndex]" :key="cards[currentIndex]" />
             </Transition>
             <div v-if="cards.length > 1" class="avatar-nav">
                 <button class="nav-btn prev" @click="prev">‹</button>
                 <div class="nav-dots">
-                    <span v-for="(_, i) in cards" :key="i" class="dot" :class="{ active: i === currentIndex }" @click="currentIndex = i"></span>
+                    <span
+                        v-for="(_, i) in cards"
+                        :key="i"
+                        class="dot"
+                        :class="{ active: i === currentIndex }"
+                        @click="currentIndex = i"
+                    ></span>
                 </div>
                 <button class="nav-btn next" @click="next">›</button>
             </div>
         </div>
         <div class="mascot-panel">
             <div class="tab-bar">
-                <button class="tab-button" :class="{ active: activeTab === 'intro' }"
-                    @click="activeTab = 'intro'">{{ locale[0] }}</button>
-                <button class="tab-button" :class="{ active: activeTab === 'story' }"
-                    @click="activeTab = 'story'">{{ locale[1] }}</button>
+                <button
+                    class="tab-button"
+                    :class="{ active: activeTab === 'intro' }"
+                    @click="activeTab = 'intro'"
+                >
+                    {{ locale[0] }}
+                </button>
+                <button
+                    class="tab-button"
+                    :class="{ active: activeTab === 'story' }"
+                    @click="activeTab = 'story'"
+                >
+                    {{ locale[1] }}
+                </button>
             </div>
             <div class="tab-content">
                 <div v-show="activeTab === 'intro'" class="tab-intro">
@@ -39,27 +55,33 @@ import { ref } from 'vue'
 const props = defineProps({
     cards: {
         type: Array,
-        default: () => []
+        default: () => [],
     },
     info: {
         type: Array,
-        default: () => []
+        default: () => [],
     },
     locale: {
         type: Array,
-        default: () => []
-    }
+        default: () => [],
+    },
 })
 
 const activeTab = ref('intro')
 const currentIndex = ref(0)
 
 function prev() {
-    currentIndex.value = currentIndex.value === 0 ? props.cards.length - 1 : currentIndex.value - 1
+    currentIndex.value =
+        currentIndex.value === 0
+            ? props.cards.length - 1
+            : currentIndex.value - 1
 }
 
 function next() {
-    currentIndex.value = currentIndex.value === props.cards.length - 1 ? 0 : currentIndex.value + 1
+    currentIndex.value =
+        currentIndex.value === props.cards.length - 1
+            ? 0
+            : currentIndex.value + 1
 }
 </script>
 
@@ -268,6 +290,8 @@ function next() {
 
     .mascot-avatar img {
         width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .avatar-nav {
