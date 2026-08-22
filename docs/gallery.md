@@ -16,7 +16,11 @@ const images = [
   { src: 'anan-by-the-window', ext: 'jpg', caption: '窗边的安安' },
   { src: 'anan-under-mushroom', ext: 'jpg', caption: '蘑菇下的安安' },
   { src: 'anan-with-cake', ext: 'jpg', caption: '安安和蛋糕' },
-  { src: 'by-the-Cuiping-Lake', ext: 'jpg', caption: '翠屏湖畔' }
+  { src: 'by-the-Cuiping-Lake', ext: 'jpg', caption: '翠屏湖畔' },
+  { src: 'anan-in-the-bushes', ext: 'jpg', caption: '灌木丛中的安安' },
+  { src: 'a-corner-of-the-stadium', ext: 'jpg', caption: '体育场一角' },
+  { src: 'watch-out-for-snakes-or-pythons', ext: 'jpg', caption: '小心蛇出没（或者是蟒蛇？）' },
+  { src: 'yue-ya-hu', ext: 'jpg', caption: '月雅湖' }
 ]
 </script>
 

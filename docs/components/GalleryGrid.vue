@@ -320,13 +320,37 @@ function handleKeydown(e) {
 
 @media (min-width: 641px) {
     .gallery-grid {
-        column-count: 8;
+        column-count: 4;
         column-gap: 0;
         display: block;
     }
 
     .gallery-item {
         break-inside: avoid;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-grid {
+        column-count: 5;
+    }
+}
+
+@media (min-width: 1100px) {
+    .gallery-grid {
+        column-count: 6;
+    }
+}
+
+@media (min-width: 1300px) {
+    .gallery-grid {
+        column-count: 7;
+    }
+}
+
+@media (min-width: 1500px) {
+    .gallery-grid {
+        column-count: 8;
     }
 }
 
