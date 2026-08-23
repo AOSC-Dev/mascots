@@ -7,15 +7,15 @@ title: 接收稿件
 
 > 该文档同时适用于主动投稿和我方约稿。
 
-## 权利归属
+## 稿件的权利归属 {#ownership-of-rights}
 
 如无另行说明，我方将会在保留画师署名的情况下，要求买断永久版权，因此需要提供原始项目文件和成品文件。
 
-在默认情况下，我方将会对包括原始项目在内的文件以 [CC BY-SA 4.0 International (如下图所示)](https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans) 协议对外发布，若对公开原始项目文件有担忧，与我方交涉后也可仅公开成品文件，但请注意成品文件将依然按该协议对外发布。
+在默认情况下，我方将会对包括原始项目在内的文件以 [CC BY-SA 4.0 International (如下图所示)](https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-hans) 协议对外发布，若对公开原始项目文件有担忧，与我方交涉后也可仅公开成品文件（此时[可以选择是否需要防止训练](#preventing-ai-training)），但请注意成品文件将依然按该协议对外发布。
 
 [![](/images/by-sa.webp)](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en)
 
-## 项目文件
+## 接受的项目文件 {#allowed-projects}
 
 请将以下文件以压缩包的形式发送给我们：
 
@@ -55,3 +55,9 @@ title: 接收稿件
 - 天生会画项目文件 (`.gopaint`)
 
 若使用以上软件创作，请保留原始项目文件，且根据指引将其转换或导出为 PSD 或 TIFF 文件后，一起发送给我们。若在该过程中遇到问题，也可联系我们寻求帮助。
+
+## 我们如何保护作品防止被用于 AI 训练 {#preventing-ai-training}
+
+若希望防止作品被用于 AI 训练，可以在交稿期间向我们提出，**但请注意我们无法阻止爬虫采集，仅能影响采集结果。**
+
+我们将使用 [Glaze](https://glaze.cs.uchicago.edu) 或 [Nightshade](https://nightshade.cs.uchicago.edu) 对成品图片进行处理后再对外发布，理论上经过该方案处理后的图片可以影响训练结果，起到一定程度上的保护作用。但我们也无法保证相关的保护技术在后续能否被破解，敬请谅解。
